@@ -2,6 +2,7 @@
 import { SignIn } from "@clerk/clerk-react";
 import {useAuth} from "@clerk/clerk-react";
 
+//comments are for knowing internals
 
 
 
@@ -10,16 +11,17 @@ function App() {
 
 
   
-const handleClick = async () => {
-  const token = await getToken();
-  await fetch("http://localhost:7000/me", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-};
+// const handleClick = async () => {
+//   const token = await getToken();
+//   await fetch("http://localhost:7000/me", {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${token}`,
+//     },
+//   });
+// };
+
   return (
   
     <div
@@ -31,12 +33,14 @@ const handleClick = async () => {
       }}
     >
       <SignIn />
-      <button onClick={handleClick}>Get Token</button>
+      {/* <button onClick={handleClick}>Get Token</button> */}
     </div>
   );
 }
 
 
 
+
 export default App
+
 
